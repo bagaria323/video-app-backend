@@ -32,6 +32,10 @@ import UserRouter from "./routes/user.routes.js";
 import VideoRouter from "./routes/video.routes.js"; 
 import likeRouter from "./routes/like.routes.js";
 
+app.get("/", (req, res) => {
+  res.status(200).json({ status: "ok", message: "Backend is healthy" });
+});
+
 // --- 3. DEFINE API ROUTES ---
 // Now that the body is parsed, the routes can use req.body safely.
 
