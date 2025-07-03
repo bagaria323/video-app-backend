@@ -8,5 +8,3 @@
 logs
 *.log
 
-# Temporary files (if any)
-/public/temp
