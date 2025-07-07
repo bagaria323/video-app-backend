@@ -54,13 +54,16 @@ const registerUser = asyncHandler(async (req, res) => {
 
 
   let avatar=null;
-  try {
+  if(avatarLocalPath)
+  {
+    try {
     avatar = await uploadcloudinary(avatarLocalPath);
     if (!avatar) throw new Error("Cloudinary upload failed for avatar");
   } catch (error) {
     throw new ApiError(500, "Error uploading avatar");
   }
 
+  }
   let coverImage = null;
   if (coverImageLocalPath) {
     try {
